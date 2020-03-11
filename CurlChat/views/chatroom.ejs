@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Curl</title>
+        <meta charset="utf-8">  
+        <!--===============================================================================================-->
+
+        <meta name="application-name" content="Curl.com">  
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scale=0"> 
+
+        <!--===============================================================================================-->
+
+        <meta name="author" content="Curl.com">
+        <meta name="keywords" content="messaging app">
+
+        <!--===============================================================================================-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuX0PKFOJwJ8ERdknLPMO" crossorigin="anonymous"/> 
+        <link rel="stylesheet" href="https://use.fontawesome.com/release/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+1jgudLWI+BXq4IuLW5IT+brZEZsLFm++aCM1F1V92rMkPaX4PP" crossorigin="anonymous">
+
+        <!--===============================================================================================-->
+        <link rel="stylesheet" href="./css/eapay.css"/>
+        <link rel="icon" href="./img/ea.png" />
+
+        <!--===============================================================================================-->
+
+        <style type="text/css">
+           @media screen and (max-width: 900px) {
+            	#webv {
+		            display: none;
+	            }
+            }
+            @media screen and (max-width: 800px) {
+	            #mv {
+		            display: block;
+	            }
+            }
+            img {
+                position: absolute;
+                z-index: -1;
+            }
+
+            /*//////////////////////////////////////////////////////////////////*/
+           
+        
+        </style>
+
+        <script type="javascript/text" src="js/curl.js"></script>
+    </head>
+
+    <body>
+
+
+        <!-- web version for larger screen -->
+	    <div id="webv" class="pl-5">
+           <div class="container-login100">
+               <div class="container pl-0">
+
+                    <div class="chatUsers">
+                        <div class="titlePane">
+                            <h1 class="pl-3">Active Members</h1>
+                        </div>
+                        <!-- Loop this for chat users -->
+                       
+                        <!-- loop end -->
+                    </div>
+
+               </div>
+
+
+
+               <div class="container-mess">
+                   
+                    <div class="control">
+                        <div class="userPicHolder"><img src="./img/user.jpg" alt="John Doe"></div>
+                        <p class="userName">John Doe</p>
+                        <div style="margin-left: 55rem" class="btn-group mt-4 mr-2">
+                            <button onclick="window.location.href='/auth/facebook'" class=" text-white btn-sm btn-info mr-2">Leave</button>
+                            <button onclick="window.location.href='/logout'" class=" text-white btn-sm btn-danger">LogOut</button>
+                        </div>
+                    </div>
+                    <div class="chatListDiv">
+                        <div class="chatMessagesPanel">
+                            <div class="chatMessages">
+                            <!-- Loop this for chat messages -->
+                            	
+                            <!-- loop end -->
+                            </div>
+                        </div>
+                        <div class="typePanel">
+                            <input type="text" name="userInput" placeholder="Type here and press enter">
+                            <a href="#" id="uploadFile" name="userInput" class="fas fa-paper-plane"></a>
+                            <a href="#" id="uploadFile"><i class="fas fa-picture"><span></span></i></a>
+                        </div>
+                    </div>
+               </div>
+           </div>
+        </div>
+
+
+
+        <!-- web for small screen size -->
+		<div class="shp" id="mv">
+            <div class="control">
+                <div class="userPicHolder"><img src="./img/user.jpg" alt="John Doe"></div>
+                <p class="userName text-white"><%= user.fullName %></p>
+                <div  class="btn-group mt-2 grpBtn">
+                    <button onclick="window.location.href='/rooms'" class=" text-white btn-sm btn-info mr-2">Back</button>
+                    <button onclick="window.location.href='/logout'" class=" text-white btn-sm btn-danger">LogOut</button>
+                </div>
+            </div>
+            <div class="chatListDiv">
+                <div class="chatMessages">
+                    <!-- Loop this for chat messages -->
+                        
+                    <!-- loop end -->
+                </div>
+                <div class="typePanel">
+                    <input type="text" name="userInput" placeholder="Type here and press enter">
+                    <a href="#" id="uploadFile" style="float: right; margin-right: 1rem;margin-top: 1.5rem;" ><span class="fas fa-paper-plane fa-lg"></span></a>
+                    <a href="#" id="uploadFile" style="margin-left: 0.5rem; top: 5rem;"><span class="far fa-images fa-lg"></span></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- javascript code -->
+        <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    </body>
+</html>

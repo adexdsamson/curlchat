@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Curl - Login</title>
+        <meta charset="utf-8">  
+        <!--===============================================================================================-->
+
+        <meta name="application-name" content="Eapay.com">  
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scale=0">
+        <!--===============================================================================================-->
+        <meta name="author" content="Curl.com">
+        <meta name="keywords" content="masseging app">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" href="./css/bootstrap.css"/> 
+        <!--===============================================================================================-->
+        <link rel="stylesheet" href="./css/all.css" >
+
+        <link rel="stylesheet" href="./css/eapay.css"/>
+        <link rel="icon" href="./img/curl.png" />
+
+        <!--===============================================================================================-->
+
+        <style type="text/css">
+           @media screen and (max-width: 900px) {
+            	#webv {
+		            display: none;
+	            }
+            }
+            @media screen and (max-width: 800px) {
+	            #mv {
+		            display: block;
+	            }
+            }
+            img {
+                position: absolute;
+                z-index: -1;
+            }
+
+            /*//////////////////////////////////////////////////////////////////*/
+           
+        </style>
+        <script>
+            'use strict';
+            $(() => {
+                let socket = io('<%= host %>' + '/roomslist', {
+                    transports: ['websocket']
+                });
+                let newRoomInput = $("input[name='roomName']");
+        
+                let renderChatRooms = chatrooms => {
+                    let roomsListDiv = $('#roomsListUL');
+                    let listStr = '';
+                    for(let cat of chatrooms) {
+                        listStr += `<a href="/chat/${cat.roomID}"><li>${cat.room}</li></a>`;
+                    }
+                    roomsListDiv.html('').append(listStr);
+                }
+        
+                // Get a list of chatrooms
+                socket.emit('getChatrooms');
+        
+                // Event listener for chatRoomsList
+                socket.on('chatRoomsList', chatrooms => {
+                    renderChatRooms(JSON.parse(chatrooms));
+                });
+        
+                $('#createBtn').on('click', () => {
+                    if(newRoomInput.val() !== '') {
+                        socket.emit('createNewRoom', newRoomInput.val());
+                        newRoomInput.val('');
+                    }
+                });
+            });
+        </script>
+
+    </head>
+
+    <body>
+
+
+        <!-- web version for larger screen -->
+	    <div id="webv" class="pl-5">
+           <div class="container-login100">
+               <div class="container pl-0">
+                    <div class="titlePanel">
+                        <h1 class="pl-3">ChatCAT | Select or Create a Chatroom</h1>
+                    </div>
+
+                    <div class="controls">
+                        <div class="userPicHolder"><img src="<%= user.profilePic %>" alt="<%= user.fullName %>"></div>
+                        <p class="userName"><%= user.fullName %></p>
+                        <button style="float:right" onclick="window.location.href='/logout'" class=" text-white btn-sm btn-danger mt-4 mr-2 ">LogOut</button>
+                    </div>
+
+                    <div class="roomsListDiv">
+                        <ul class="roomsList" id="roomsListUL">
+                        <!-- Loop list items here -->
+                           
+                        <!-- Loop ends -->
+                        </ul>
+                    </div>
+
+                    <div class="controls">
+                        <input type="text" name="roomName" placeholder="Create a new Chatroom">
+                        <button style="float:right" onclick="window.location.href='#'" class=" text-white btn-sm btn-success mt-4 mr-2 ">Create</button>
+                    </div>
+               </div>
+                
+           </div>
+        </div>
+
+
+
+        <!-- web for small screen size -->
+		<div id="mv">
+            <div class="container-t">
+                <div class="titlePanel">
+                    <h1 class="pl-3"> Curl | Select or Create a Chatroom</h1>
+                </div>
+
+                <div class="controls">
+                    <div class="userPicHolderT"><img src="<%= user.profilePic %>" alt="<%= user.fullName %>"></div>
+                    <p class="userNameR"><%= user.fullName %></p>
+                    <button style="float:right" onclick="window.location.href='/logout'" class=" text-white btn-sm btn-danger log mr-2 ">LogOut</button>
+                </div>
+
+                <div class="roomsListDiv">
+                    <ul class="roomsList" id="roomsListUL">
+                    <!-- Loop list items here -->
+                       
+                    <!-- Loop ends -->
+                    </ul>
+                </div>
+
+                <div class="controls">
+                    <input type="text" name="roomName" placeholder="Create a new Chatroom">
+                    <button style="float:right" id="createBtn" onclick="window.location.href='#'" class=" text-white btn-sm btn-success mt-2 mr-2 ">Create</button>
+                </div>
+            </div>
+        </div>
+        <!-- javascript code -->
+        <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    </body>
+</html>

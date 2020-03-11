@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="60.96mm" height="108.373mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 6096 10837"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="591" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="400">
+	<font-face 
+		font-family="Bauhaus 93">
+		<font-face-src>
+			<font-face-name name="Bauhaus 93"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="c" horiz-adv-x="559" d="M351.998 224.167l181.168 6.8313c-5.16513,-70.1656 -31.3319,-127.998 -78.5004,-173.167 -47.1645,-45.1651 -104.667,-67.833 -172.334,-67.833 -71.6652,0 -132,24.8339 -181.331,74.6683 -49.3345,49.8344 -74.0018,110.832 -74.0018,183.001 0,68.6661 24.8339,127.331 74.6683,176.166 49.8304,48.8307 109.499,73.1647 179.165,73.1647 60.8351,0 114.502,-19.1649 161.166,-57.4988 46.502,-38.5004 75.5013,-87.3351 86.8353,-146.833l-185 -6.83527c-15.9992,20.8351 -36.1678,31.1693 -60.5018,31.1693 -20.8311,0 -38.0006,-6.83527 -51.3339,-20.5018 -13.3333,-13.6666 -19.998,-30.9987 -19.998,-51.8338 0,-21.1643 6.99792,-38.8337 21.1643,-53.1667 14.1704,-14.333 31.8358,-21.4976 53.0001,-21.4976 30.8361,0 52.8335,17.9986 65.8336,54.1664z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Bauhaus 93";font-variant:normal;font-style:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .str0 {stroke:#59B7E0;stroke-width:20}
+    .fil0 {fill:#59B7E0}
+    .fil1 {fill:#F0F8FC}
+    .fnt0 {font-weight:normal;font-size:2520.75px;font-family:'Bauhaus 93'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0 str0" x="643" y="4394" width="3150" height="3247" rx="217" ry="221"/>
+  <g transform="matrix(0.738459 -0.674299 0.674299 0.738459 -4348.85 5545.68)">
+   <text x="3048" y="5419"  class="fil1 fnt0">c</text>
+  </g>
+ </g>
+</svg>

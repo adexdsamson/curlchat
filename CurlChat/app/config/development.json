@@ -1,0 +1,16 @@
+{
+    "host": "http://localhost:3000",
+    "dbURI": "mongodb://curlChatUser:adeola1254@ds141175.mlab.com:41175/curldb",
+    "sessionSecret": "countercounter",
+    "fb": {
+        "clientID": "614841345597230",
+        "clientSecret": "cd4e18cfbe40fb93079f071e2dbd0352",
+        "callbackURL": "//localhost:3000/auth/facebook/callback",
+        "profileFields": ["id", "displayName", "photos"]
+    },
+    "redis": {
+        "host": "127.0.0.1",
+        "port": 6379,
+        "password":  ""
+    }
+}
